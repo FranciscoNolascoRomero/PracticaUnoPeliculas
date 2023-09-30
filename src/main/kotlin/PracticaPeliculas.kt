@@ -17,12 +17,13 @@ fun main() {
         println("│  3: Borrar película por clave  │")
         println("│  4: Editar película            │")
         println("│  5: Mostrar peliculas          │")
-        println("│  6: Cerrar sesion              │")
+        println("│  6: Mostrar pelicula por clave │")
+        println("│  7: Cerrar sesion              │")
         println("└────────────────────────────────┘")
         print("─ Selecciona una opción: ")
+        val opcion = readLine();
 
-
-        when (readLine()?.toIntOrNull()) {
+        when (opcion?.toIntOrNull()) {
             1 -> {
                 val pelicula = Pelicula()
                 print("Introduce el nombre: ")
@@ -89,12 +90,28 @@ fun main() {
 
             }
             6 -> {
+                print("Introduce la clave de la película que deseas buscar: ")
+                val clave = readLine()?.toIntOrNull()
+                val pelicula = peliculas[clave]
+                if (pelicula != null) {
+                    println("┌─────────────────────────── Película Encontrada ─────────────────────────┐")
+                    println("    Nombre: ${pelicula.nombrePelicula}")
+                    println("    Creador: ${pelicula.creadorPelicula}")
+                    println("    Edad Mínima: ${pelicula.edadMinima}")
+                    println("└─────────────────────────────────────────────────────────────────────────┘")
+                } else {
+                    println("┌────────────────────────────────────────────────────────────────┐")
+                    println("|  No se ha encontrado película con el código $clave")
+                    println("└────────────────────────────────────────────────────────────────┘")
+                }
+            }
+            7 -> {
                 println("┌───────────────────┐")
                 println("|  SESION CERRADA.  |")
                 println("└───────────────────┘")
                 return
             }
-            else -> println("Seleccione un numero del 1 al 6")
+            else -> println("Seleccione un numero del 1 al 7")
         }
     }
 }
