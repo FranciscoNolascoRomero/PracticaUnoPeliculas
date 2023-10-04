@@ -101,7 +101,7 @@ fun main() {
                     println("└─────────────────────────────────────────────────────────────────────────┘")
                 } else {
                     println("┌────────────────────────────────────────────────────────────────┐")
-                    println("|  No se ha encontrado película con el código $clave")
+                    println("|  No se ha encontrado película con la clave $clave")
                     println("└────────────────────────────────────────────────────────────────┘")
                 }
             }
