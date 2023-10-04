@@ -65,8 +65,8 @@ fun main() {
             }
             4 -> {
                 print("Introduce la clave de la película a editar (si no la sabes ve a la opcion 5): ")
-                val codigo = readLine()?.toIntOrNull()
-                val pelicula = peliculas[codigo]
+                val clave = readLine()?.toIntOrNull()
+                val pelicula = peliculas[clave]
                 if (pelicula != null) {
                     print("Introduce el nuevo nombre (actual: ${pelicula.nombrePelicula}): ")
                     pelicula.nombrePelicula = readLine()!!
